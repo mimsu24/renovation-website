@@ -1,113 +1,168 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-container {
-    background-color: gray;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    
+  background-color: #808080;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
 }
 
 .nav-container h2,
 .nav-container a {
-    color: white;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .nav-container ul {
-    list-style: none;
+  list-style: none;
 }
 
 .nav-container .link-container {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
-#hero-container{
-    height: 600px;
-    padding-top: 250px;
-    background-color: lightblue;
-    text-align: center;
+#hero-container {
+  height: 600px;
+  padding-top: 250px;
+  background-color: #39484d;
+  text-align: center;
+  color: #fff;
 }
 
 #hero-container .cta {
-    margin-top: 10px;
-    border: 2px solid white;
-    color: black;
-    background-color: gray;
-    padding: 10px;
-    border-radius: 10px;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 #hero-container .cta:hover {
-    color: gray;
-    background-color: lightgray;
+  background-color: #0056b3;
 }
 
 #about-container {
-    height: 600px;
-    background-color: lightgray;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  height: 600px;
+  background-color: #d3d3d3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #about-container p {
-    margin-top: 20px;
-    max-width: 400px;
+  margin-top: 20px;
+  max-width: 400px;
 }
 
 #services {
-    display: flex;
-    justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
 }
 
 .service {
-    width: 40%;
-    height: 400px;
-    padding: 20px;
-    border: 1px solid lightgray; 
-    border-radius: 5px;
-    background-color: white;
-    text-align: center;
-
+  width: 40%;
+  height: 400px;
+  padding: 20px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
 }
 
 .service h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .service p {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #calculator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
 }
 
-
 .calculator-container {
-    width: 800px;
-    height: 500px;
-    padding-top: 40px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    background-color: white;
-    margin: 0 auto;
+  width: 800px;
+  height: 500px;
+  padding-top: 40px;
+  border: 2px solid #808080;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #686868;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container h2 {
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+  padding: 10px;
+  border: 1px solid #686868;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.form-group textarea {
+  height: 150px;
+  overflow-y: auto;
+  resize: none;
+}
+
+.form-group button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+.form-group.required label:after {
+  content: '*';
+  color: red;
+  margin-left: 5px;
 }
 
 .footer {
-    height: 300px;
-    background-color: #161616;
+  height: 300px;
+  background-color: #161616;
 }
