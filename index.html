@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="navigation.js" defer></script> <!-- Script for smooth scrolling on page navigation -->
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renovation Website</title>
@@ -14,9 +15,9 @@
     <img class="logo" src="https://placehold.co/80x50/webp" />
     <nav>
       <ul class="nav-container">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a onclick="scrollToAbout()">About</a></li>
+        <li><a onclick="scrollToServices()">Services</a></li>
+        <li><a onclick="scrollToContact()">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -25,7 +26,7 @@
     <section class="hero-container">
       <h1>Elevate Your Space with Expert Renovation Services</h1>
       <p>Craftsmanship. Creativity. Your Dream Space, Realized.</p>
-      <button class="cta">Get an estimate</button>
+      <button class="cta" onclick="scrollToCalculator()">Get an estimate</button>
     </section>
 
     <article id="about" class="about-container">

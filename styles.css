@@ -35,6 +35,7 @@ header .nav-container li a {
 
 header .nav-container li a:hover {
   color: #0088a9;
+  cursor: pointer;
 }
 
 header .logo {
@@ -64,6 +65,7 @@ header .logo {
 
 .hero-container .cta:hover {
   background-color: #0056b3;
+  cursor: pointer;
 }
 
 /* About */
