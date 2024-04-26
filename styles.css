@@ -44,9 +44,11 @@ header .logo {
 /* Hero */
 
 .hero-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/modern-kitchen-hero.webp'); /* change the decimal values to affect transparency */
+  background-size: cover;
+  background-position: center;
   height: 600px;
   padding-top: 250px;
-  background-color: #39484d;
   text-align: center;
   color: #fff;
 }
