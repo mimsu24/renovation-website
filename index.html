@@ -18,13 +18,20 @@
 
   <body>
     <header>
-      <img class="logo" src="https://placehold.co/80x50/webp" />
-      <nav>
-        <ul class="nav-container">
-          <li><a onclick="scrollToAbout()">About</a></li>
-          <li><a onclick="scrollToServices()">Services</a></li>
-          <li><a onclick="scrollToContact()">Contact</a></li>
-        </ul>
+      <nav class="navbar">
+        <div class="company-title">Company Name</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a onclick="scrollToAbout()">About</a></li>
+            <li><a onclick="scrollToServices()">Services</a></li>
+            <li><a onclick="scrollToContact()">Contact</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
