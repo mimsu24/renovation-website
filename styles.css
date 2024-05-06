@@ -6,6 +6,7 @@
 
 body {
   font-family: "Urbanist", sans-serif, serif;
+  background-color: #969696;
 }
 
 /* Header */
@@ -164,17 +165,19 @@ body {
 .services {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 20px;
+  margin: 10px;
 }
 
 .services .service1,
 .services .service2,
 .services .service3 {
   position: relative;
-  width: 40%;
+  width: 30%; 
   height: 650px;
   text-align: center;
+  border: 2px solid #c9c9c9;
+  border-radius: 10px;
 }
 
 .services .bg-img {
@@ -212,6 +215,18 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 30px;
   border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .services {
+    flex-direction: column;
+  }
+
+  .services .service1,
+  .services .service2,
+  .services .service3 {
+    width: 100%;
+  }
 }
 
 /* Calculator */
