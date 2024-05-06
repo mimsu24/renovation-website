@@ -1,0 +1,49 @@
+{% extends "calculator/_base.html" %}
+{% load static %}  
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remodeling Cost Calculator</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Wall Repair</h1>
+    <div class="container">
+        <form method="post" action="{% url 'wall-calculator' %}">
+            {% csrf_token %}
+            <h3>Huoneiston tyyppi:</h3>
+            <div class='radio-container'>
+                {% for house in type_of_house %}
+                <div>
+                    <input type="radio" name="house_type" value="{{ house.id }}" id="house_{{ house.id }}" required>
+                    <label for="house_{{ house.id }}">{{ house.type_of_house }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <div >
+                <label for="square_meters">Remontoitavan tilan lattiapinta-ala (m²) :</label>
+                <input type="number" name="square_meters" placeholder="Square Meters" required>
+            </div>
+            <h3>Seinien maalaus</h3>
+            <div class='radio-container'>
+                {% for material in wall_material %}
+                <div>
+                    <input type="radio" name="wall_material" value="{{ material.id }}" id="material_{{ material.id }}" required>
+                    <label for="material_{{ material.id }}">{{ material.wall_material }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="result">
+                <button type="submit">Laskee hinta</button>
+                {% if total_cost %}
+                    Total Cost: <span id='total-cost'> {{ total_cost }} </span>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>
