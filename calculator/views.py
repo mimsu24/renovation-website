@@ -68,7 +68,7 @@ class BathroomCalculatorView(View):
         type_of_sink = BathroomSink.objects.all()
         type_of_item = BathroomSpecialItem.objects.all()
         total_cost = request.session.pop('total_cost', None)
-        return render(request, 'calculator/Bathroom.html', {
+        return render(request, 'calculator/bathroom.html', {
             'type_of_house': type_of_house,
             'wall_material': wall_material,
             'floor_material': floor_material,
@@ -81,48 +81,51 @@ class BathroomCalculatorView(View):
     
     def post(self, request):
         house_type_id = request.POST.get('house_type')
-        square_meters = Decimal(request.POST.get('square_meters', '0'))
-        total_cost = Decimal('0')
+        square_meters = request.POST.get('square_meters')
 
+        # Convert square meters to Decimal only if provided
+        square_meters = Decimal(square_meters) if square_meters else 0
+
+        # Initialize total cost
+        total_cost = 0
+
+        # Fetch the house type if provided and add its additional cost
         if house_type_id:
             house_type = HouseType.objects.get(id=house_type_id)
-            total_cost += Decimal(house_type.add)  # Add costs associated with house type
+            total_cost += Decimal(house_type.add)
 
-        # Check each possible renovation choice, adding costs as needed
-        wall_material_id = request.POST.get('wall_material')
+        # Fetch wall and floor materials if provided and calculate cost based on square meters
+        wall_material_id = request.POST.get('wall_material', None)
+        floor_material_id = request.POST.get('floor_material', None)
         if wall_material_id:
             wall_material = WallMaterial.objects.get(id=wall_material_id)
             total_cost += wall_material.price_per_square_meter * square_meters
 
-        floor_material_id = request.POST.get('floor_material')
         if floor_material_id:
             floor_material = FloorMaterial.objects.get(id=floor_material_id)
             total_cost += floor_material.price_per_square_meter * square_meters
 
-        # Similar checks for other bathroom components
-        type_of_toilet_id = request.POST.get('type_of_toilet')
+        # Fetch bathroom items and add their fixed cost (not based on square meters)
+        type_of_toilet_id = request.POST.get('type_of_toilet', None)
+        type_of_shower_id = request.POST.get('type_of_shower', None)
+        type_of_sink_id = request.POST.get('type_of_sink', None)
         if type_of_toilet_id:
             type_of_toilet = BathroomToilet.objects.get(id=type_of_toilet_id)
-            total_cost += Decimal(type_of_toilet.add)  # Assuming .add holds the cost
+            total_cost += type_of_toilet.add  # Assuming a fixed_price field exists
 
-        type_of_shower_id = request.POST.get('type_of_shower')
         if type_of_shower_id:
             type_of_shower = BathroomShower.objects.get(id=type_of_shower_id)
-            total_cost += Decimal(type_of_shower.add)
+            total_cost += type_of_shower.add
 
-        type_of_sink_id = request.POST.get('type_of_sink')
         if type_of_sink_id:
             type_of_sink = BathroomSink.objects.get(id=type_of_sink_id)
-            total_cost += Decimal(type_of_sink.add)
+            total_cost += type_of_sink.add
 
-        type_of_item_id = request.POST.get('type_of_item')
-        if type_of_item_id:
-            type_of_item = BathroomSpecialItem.objects.get(id=type_of_item_id)
-            total_cost += Decimal(type_of_item.add)
+        # Store the calculated total cost in session
+        request.session['total_cost'] = float(total_cost)
 
-        request.session['total_cost'] = float(total_cost)  # Storing as float for session storage
+        # Redirect to display results
         return redirect(reverse('bathroom-calculator'))
-
 
 
 

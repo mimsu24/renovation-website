@@ -25,13 +25,13 @@
             </div>
             <div >
                 <label for="square_meters">Remontoitavan tilan lattiapinta-ala (m²) :</label>
-                <input type="number" name="square_meters" placeholder="Square Meters" required>
+                <input type="number" name="square_meters" placeholder="Square Meters">
             </div>
             <h3>Seinien maalaus</h3>
             <div class='radio-container'>
                 {% for material in wall_material %}
                 <div>
-                    <input type="radio" name="wall_material" value="{{ material.id }}" id="material_{{ material.id }}" required>
+                    <input type="radio" name="wall_material" value="{{ material.id }}" id="material_{{ material.id }}">
                     <label for="material_{{ material.id }}">{{ material.wall_material }}</label>
                 </div>
                 {% endfor %}
@@ -40,7 +40,7 @@
             <div class='radio-container'>
                 {% for material in floor_material %}
                 <div>
-                    <input type="radio" name="floor_material" value="{{ material.id }}" id="material_{{ material.id }}" required>
+                    <input type="radio" name="floor_material" value="{{ material.id }}" id="material_{{ material.id }}">
                     <label for="material_{{ material.id }}">{{ material.floor_material }}</label>
                 </div>
                 {% endfor %}
@@ -49,8 +49,8 @@
             <div class='radio-container'>
                 {% for toilet in type_of_toilet %}
                 <div>
-                    <input type="radio" name="type_of_toilet" value="{{ toilet.id }}" id="toilet_{{ toilet.id }}" required>
-                    <label for="toilet_{{ toilet.id }}">{{ toilet.bathroom_item }}</label>
+                    <input type="radio" name="type_of_toilet" value="{{ toilet.id }}" id="toilet_{{ toilet.id }}">
+                    <label for="toilet_{{ toilet.id }}">{{ toilet.type_of_toilet }}</label>
                 </div>
                 {% endfor %}
             </div>
@@ -59,8 +59,8 @@
             <div class='radio-container'>
                 {% for shower in type_of_shower %}
                 <div>
-                    <input type="radio" name="type_of_shower" value="{{ shower.id }}" id="shower_{{ shower.id }}" required>
-                    <label for="shower_{{ shower.id }}">{{ shower.bathroom_item }}</label>
+                    <input type="radio" name="type_of_shower" value="{{ shower.id }}" id="shower_{{ shower.id }}">
+                    <label for="shower_{{ shower.id }}">{{ shower.type_of_shower }}</label>
                 </div>
                 {% endfor %}
             </div>
@@ -69,8 +69,8 @@
             <div class='radio-container'>
                 {% for sink in type_of_sink %}
                 <div>
-                    <input type="radio" name="type_of_sink" value="{{ sink.id }}" id="sink_{{ sink.id }}" required>
-                    <label for="sink_{{ sink.id }}">{{ sink.bathroom_item }}</label>
+                    <input type="radio" name="type_of_sink" value="{{ sink.id }}" id="sink_{{ sink.id }}" >
+                    <label for="sink_{{ sink.id }}">{{ sink.type_of_sink }}</label>
                 </div>
                 {% endfor %}
             </div>
@@ -79,11 +79,12 @@
             <div class='radio-container'>
                 {% for item in type_of_item %}
                 <div>
-                    <input type="radio" name="type_of_item" value="{{ item.id }}" id="item_{{ item.id }}" required>
-                    <label for="item_{{ item.id }}">{{ item.bathroom_item }}</label>
+                    <input type="radio" name="type_of_item" value="{{ item.id }}" id="item_{{ item.id }}">
+                    <label for="item_{{ item.id }}">{{ item.type_of_item }}</label>
                 </div>
                 {% endfor %}
             </div>
+
             <div id="result">
                 <button type="submit">Laskee hinta</button>
                 {% if total_cost %}
