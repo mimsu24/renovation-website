@@ -164,8 +164,7 @@ body {
 
 .services {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: space-around;
   margin: 10px;
 }
 
@@ -309,7 +308,33 @@ body {
 
 /* Footer */
 
-.footer {
-  height: 300px;
-  background-color: #161616;
+footer {
+  background-color: #292929;
+}
+
+footer .socials {
+  background-color: #404040; 
+  padding: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.socials a {
+  margin-right: 20px;
+  font-size: 36px;
+  color: white;
+}
+
+footer .copyright {
+  color: white;
+  height: 40px;
+}
+
+footer .copyright p{
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
 }
