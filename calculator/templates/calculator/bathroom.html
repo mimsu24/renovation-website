@@ -10,7 +10,7 @@
 </head>
 <body>
     {% block content %}
-    <h1>Wall Repair</h1>
+    <h1>Bathroom Repair</h1>
     <div class="container">
         <form method="post" action="{% url 'bathroom-calculator' %}">
             {% csrf_token %}
@@ -42,6 +42,45 @@
                 <div>
                     <input type="radio" name="floor_material" value="{{ material.id }}" id="material_{{ material.id }}" required>
                     <label for="material_{{ material.id }}">{{ material.floor_material }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <h3>WC</h3>
+            <div class='radio-container'>
+                {% for toilet in type_of_toilet %}
+                <div>
+                    <input type="radio" name="type_of_toilet" value="{{ toilet.id }}" id="toilet_{{ toilet.id }}" required>
+                    <label for="toilet_{{ toilet.id }}">{{ toilet.bathroom_item }}</label>
+                </div>
+                {% endfor %}
+            </div>
+
+            <h3>Suihkut</h3>
+            <div class='radio-container'>
+                {% for shower in type_of_shower %}
+                <div>
+                    <input type="radio" name="type_of_shower" value="{{ shower.id }}" id="shower_{{ shower.id }}" required>
+                    <label for="shower_{{ shower.id }}">{{ shower.bathroom_item }}</label>
+                </div>
+                {% endfor %}
+            </div>
+
+            <h3>Allashanat</h3>
+            <div class='radio-container'>
+                {% for sink in type_of_sink %}
+                <div>
+                    <input type="radio" name="type_of_sink" value="{{ sink.id }}" id="sink_{{ sink.id }}" required>
+                    <label for="sink_{{ sink.id }}">{{ sink.bathroom_item }}</label>
+                </div>
+                {% endfor %}
+            </div>
+
+            <h3>Erikoiskohteet</h3>
+            <div class='radio-container'>
+                {% for item in type_of_item %}
+                <div>
+                    <input type="radio" name="type_of_item" value="{{ item.id }}" id="item_{{ item.id }}" required>
+                    <label for="item_{{ item.id }}">{{ item.bathroom_item }}</label>
                 </div>
                 {% endfor %}
             </div>
