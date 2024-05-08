@@ -3,32 +3,71 @@ body {
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
-div.container {
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-    background-color: whitesmoke;
-    height: auto;
-    margin-top: 30px;
-    margin-left: 25%;
-    margin-right: 25%;
+
+h1 {
+    text-align: center;
 }
 
-div.radio-container {
-    display: flex;
-    flex-direction: center;
-    flex-wrap: wrap;
+h3 {
+    text-align: left;
     margin-bottom: 10px;
-    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+div.remontointi-form label {
+    font-weight: bold; 
+    padding-left: 10px; 
+}
+
+nav.navbar {
+    font-size: 0.8em;
+}
+
+nav.navbar ul {
+    display: flex; 
+    justify-content: center; 
+    background-color: hsl(0, 0%, 55%);
+    padding: 0; 
+}
+
+nav.navbar ul li {
+    list-style-type: none; 
+    margin: 10px; 
+}
+
+nav.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+nav.navbar a:hover {
+    background-color: hsl(0, 0%, 40%);
+    border-radius: 5px;
+}
+
+div.container {
+    display: grid;
+    background-color: hsl(0, 0%, 75%);
+    padding: 50px;
+    margin: 50px 250px;
+}
+
+
+div.radio-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+
 }
 
 div.radio-container label {
     cursor: pointer;
     border-radius: 5px;
+    padding: 10px;
     background-color: white;
-    margin: 10px;
-    padding: 5px;
 }
 
 div.radio-container input[type='radio'] {
@@ -37,7 +76,14 @@ div.radio-container input[type='radio'] {
 }
 
 div.radio-container label:hover {
+    color: white;
     cursor: pointer;
-    background-color: antiquewhite;
+    background-color:  hsl(0, 0%, 40%);
 }
 
+input[name="square_meters"]::placeholder {
+    color: #888;               
+    font-style: italic;        
+    font-size: 14px;           
+
+}

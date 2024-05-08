@@ -97,13 +97,16 @@ class BathroomCalculatorView(View):
         # Fetch wall and floor materials if provided and calculate cost based on square meters
         wall_material_id = request.POST.get('wall_material', None)
         floor_material_id = request.POST.get('floor_material', None)
-        if wall_material_id:
+        if wall_material_id and floor_material_id:
             wall_material = WallMaterial.objects.get(id=wall_material_id)
-            total_cost += wall_material.price_per_square_meter * square_meters
-
-        if floor_material_id:
+            floor_material = FloorMaterial.objects.get(id=floor_material_id)
+            total_cost += wall_material.price_per_square_meter + floor_material.price_per_square_meter * square_meters
+        elif floor_material_id:
             floor_material = FloorMaterial.objects.get(id=floor_material_id)
             total_cost += floor_material.price_per_square_meter * square_meters
+        elif wall_material_id: 
+            wall_material = WallMaterial.objects.get(id=wall_material_id)
+            total_cost += wall_material.price_per_square_meter * square_meters
 
         # Fetch bathroom items and add their fixed cost (not based on square meters)
         type_of_toilet_id = request.POST.get('type_of_toilet', None)
@@ -141,23 +144,4 @@ class BathroomCalculatorView(View):
 
 
 
-"""
-        house_type_id = request.POST.get('house_type')
-        square_meters = Decimal(request.POST.get('square_meters'))
-        wall_material_id = request.POST.get('wall_material')
-        floor_material_id = request.POST.get('floor_material')
-        type_of_toilet_id = request.POST.get('type_of_toilet')
-        type_of_shower_id = request.POST.get('type_of_shower')
-        type_of_sink_id = request.POST.get('type_of_sink')
-        type_of_item_id = request.POST.get('type_of_item')
 
-
-        get_house_type_id = HouseType.objects.get(id=house_type_id)
-        get_wall_material_id = WallMaterial.objects.get(id=wall_material_id)
-        get_floor_material_id = FloorMaterial.objects.get(id=floor_material_id)
-        get_type_of_toilet_id = BathroomToilet.objects.get(id=type_of_toilet_id)
-        get_type_of_shower_id = BathroomShower.objects.get(id=type_of_shower_id)
-        get_type_of_sink_id = BathroomSink.objects.get(id=type_of_sink_id)
-        get_type_of_item_id = BathroomSpecialItem.objects.get(id=type_of_item_id)
-
-"""
