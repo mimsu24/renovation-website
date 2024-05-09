@@ -170,11 +170,15 @@ body {
   margin: 10px;
 }
 
+.services a {
+  text-decoration: none;
+  width: 30%;
+}
+
 .services .service1,
 .services .service2,
 .services .service3 {
   position: relative;
-  width: 30%;
   height: 650px;
   text-align: center;
   border: 2px solid #66637A;
@@ -223,10 +227,15 @@ body {
     flex-direction: column;
   }
 
+  .services a {
+    width: 100%; 
+  }
+
   .services .service1,
   .services .service2,
   .services .service3 {
-    width: 100%;
+    width: auto; 
+    margin-bottom: 20px; 
   }
 }
 
