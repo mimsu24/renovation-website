@@ -6,7 +6,7 @@
 
 body {
   font-family: "Urbanist", sans-serif, serif;
-  background-color: #969696;
+  background-color: #f7f7f7;
 }
 
 /* Header */
@@ -15,8 +15,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: white;
+  background-color: #f7f7f7;
+  color: #169CEE;
 }
 
 .navbar.sticky {
@@ -42,14 +42,13 @@ body {
 
 .navbar-links li a {
   text-decoration: none;
-  color: white;
   font-weight: 500;
   padding: 15px;
   display: block;
 }
 
 .navbar-links li:hover {
-  background-color: #555;
+  background-color: #e7e7e7;
   cursor: pointer;
 }
 
@@ -67,37 +66,37 @@ body {
 .toggle-button .bar {
   height: 3px;
   width: 100%;
-  background-color: white;
+  background-color: #169CEE;
   border-radius: 10px;
 }
 
 @media (max-width: 600px) {
   .toggle-button {
-      display: flex;
+    display: flex;
   }
 
   .navbar-links {
-      display: none;
-      width: 100%;
+    display: none;
+    width: 100%;
   }
 
   .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
   }
 
   .navbar-links ul {
-      width: 100%;
-      flex-direction: column;
+    width: 100%;
+    flex-direction: column;
   }
 
   .navbar-links li {
-      text-align: center;
+    text-align: center;
   }
 
   .navbar-links.active {
-      display: flex;
+    display: flex;
   }
 }
 
@@ -105,13 +104,14 @@ body {
 
 .hero-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("img/modern-kitchen-hero.webp"); /* Change the decimal values to affect transparency */
+    url("img/modern-kitchen-hero.webp");
+  /* Change the decimal values to affect transparency */
   background-position: center;
   background-size: cover;
   height: 800px;
   padding-top: 300px;
   text-align: center;
-  color: #fff;
+  color: #f7f7f7;
 }
 
 .hero-container h1 {
@@ -128,9 +128,9 @@ body {
 
 .hero-container .cta {
   margin-top: 10px;
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: #0088a9;
+  border: 2px solid #f7f7f7;
+  color: #f7f7f7;
+  background-color: #169CEE;
   padding: 10px;
   border-radius: 10px;
   font-size: 12px;
@@ -138,7 +138,7 @@ body {
 }
 
 .hero-container .cta:hover {
-  background-color: #006e8a;
+  background-color: #1591df;
   cursor: pointer;
 }
 
@@ -146,18 +146,20 @@ body {
 
 .about-container {
   height: 600px;
-  background-color: #d3d3d3;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  color: #169CEE;
 }
 
 .about-container p {
   margin-top: 20px;
   max-width: 400px;
+  font-weight: 600;
+  color: #66637A;
 }
 
 /* Services */
@@ -172,10 +174,10 @@ body {
 .services .service2,
 .services .service3 {
   position: relative;
-  width: 30%; 
+  width: 30%;
   height: 650px;
   text-align: center;
-  border: 2px solid #c9c9c9;
+  border: 2px solid #66637A;
   border-radius: 10px;
 }
 
@@ -187,7 +189,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .service1 .bg-img {
@@ -210,7 +212,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  color: white;
+  color: #f7f7f7;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 30px;
   border-radius: 10px;
@@ -252,8 +254,8 @@ body {
   max-width: 700px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
-  border: 2px solid #686868;
+  background-color: #e4e4e4;
+  color: #66637A;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -270,13 +272,14 @@ body {
 }
 
 .form-group label {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .form-group input,
 .form-group textarea {
   padding: 10px;
   border: 1px solid #686868;
+  background-color: #f7f7f7;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -289,32 +292,32 @@ body {
 
 .form-group button {
   padding: 10px;
-  background-color: #007bff;
+  background-color: #169CEE;
   color: #fff;
+  font-weight: 700;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .form-group button:hover {
-  background-color: #0056b3;
+  background-color: #1591df;
 }
 
 .form-group.required label:after {
   content: "*";
-  color: red;
+  color: #169CEE;
   margin-left: 5px;
 }
 
 /* Footer */
 
 footer {
-  background-color: #292929;
+  background-color: #e4e4e4;
 }
 
 footer .socials {
-  background-color: #404040; 
-  padding: 20px;
+  padding: 30px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -325,15 +328,15 @@ footer .socials {
 .socials a {
   margin-right: 20px;
   font-size: 36px;
-  color: white;
+  color: #169CEE;
 }
 
 footer .copyright {
-  color: white;
+  color: #169CEE;
   height: 40px;
 }
 
-footer .copyright p{
+footer .copyright p {
   font-size: 20px;
   text-align: center;
   padding-top: 10px;
