@@ -1,341 +1,390 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Urbanist", sans-serif, serif;
+  background-color: #f7f7f7;
+}
+
+/* Header */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  color: #169CEE;
+}
+
+.navbar.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.company-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 8px;
+}
+
+.navbar-links ul {
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 15px;
+  display: block;
+}
+
+.navbar-links li:hover {
+  background-color: #e7e7e7;
+  cursor: pointer;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #169CEE;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0;
   }
-  
-  body {
-    font-family: "Urbanist", sans-serif, serif;
-    background-color: #969696;
-  }
-  
-  /* Header */
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-  }
-  
-  .navbar.sticky {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .company-title {
-    font-size: 26px;
-    font-weight: 600;
-    margin: 8px;
-  }
-  
+
   .navbar-links ul {
-    display: flex;
-  }
-  
-  .navbar-links li {
-    list-style: none;
-  }
-  
-  .navbar-links li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    padding: 15px;
-    display: block;
-  }
-  
-  .navbar-links li:hover {
-    background-color: #555;
-    cursor: pointer;
-  }
-  
-  .toggle-button {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-  }
-  
-  .toggle-button .bar {
-    height: 3px;
     width: 100%;
-    background-color: white;
-    border-radius: 10px;
-  }
-  
-  @media (max-width: 600px) {
-    .toggle-button {
-        display: flex;
-    }
-  
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-  
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-    }
-  
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-  
-    .navbar-links li {
-        text-align: center;
-    }
-  
-    .navbar-links.active {
-        display: flex;
-    }
-  }
-  
-  /* Hero */
-  
-  .hero-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("img/modern-kitchen-hero.webp"); /* Change the decimal values to affect transparency */
-    background-position: center;
-    background-size: cover;
-    height: 800px;
-    padding-top: 300px;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .hero-container h1 {
-    font-size: 36px;
-    font-weight: 700;
-    text-shadow: 0.5px 0.5px 4px #000000;
-  }
-  
-  .hero-container p {
-    font-size: 20px;
-    font-weight: 500;
-    text-shadow: 0.5px 0.5px 4px #000000;
-  }
-  
-  .hero-container .cta {
-    margin-top: 10px;
-    border: 2px solid #fff;
-    color: #fff;
-    background-color: #0088a9;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  
-  .hero-container .cta:hover {
-    background-color: #006e8a;
-    cursor: pointer;
-  }
-  
-  /* About */
-  
-  .about-container {
-    height: 600px;
-    background-color: #d3d3d3;
-    text-align: center;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
   }
-  
-  .about-container p {
-    margin-top: 20px;
-    max-width: 400px;
+
+  .navbar-links li {
+    text-align: center;
   }
-  
-  /* Services */
-  
-  .services {
+
+  .navbar-links.active {
     display: flex;
-    justify-content: space-around;
-    margin: 10px;
   }
-  
+}
+
+/* Hero */
+
+.hero-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("img/modern-kitchen-hero.webp");
+  /* Change the decimal values to affect transparency */
+  background-position: center;
+  background-size: cover;
+  height: 800px;
+  padding-top: 300px;
+  text-align: center;
+  color: #f7f7f7;
+}
+
+.hero-container h1 {
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: 0.5px 0.5px 4px #000000;
+}
+
+.hero-container p {
+  font-size: 20px;
+  font-weight: 500;
+  text-shadow: 0.5px 0.5px 4px #000000;
+}
+
+.hero-container .cta {
+  margin-top: 10px;
+  border: 2px solid #f7f7f7;
+  color: #f7f7f7;
+  background-color: #169CEE;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero-container .cta:hover {
+  background-color: #1591df;
+  cursor: pointer;
+}
+
+/* About */
+
+.about-container {
+  height: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #169CEE;
+}
+
+.about-container p {
+  margin-top: 20px;
+  max-width: 400px;
+  font-weight: 600;
+  color: #66637A;
+}
+
+/* Services */
+
+.services {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.services a {
+  text-decoration: none;
+  width: 30%;
+}
+
+.services .service1,
+.services .service2,
+.services .service3 {
+  position: relative;
+  height: 650px;
+  text-align: center;
+  border: 2px solid #66637A;
+  border-radius: 10px;
+}
+
+.services .bg-img {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.service1 .bg-img {
+  background-image: url("img/modern-bathroom-services.webp");
+}
+
+.service2 .bg-img {
+  background-image: url("img/modern-kitchen-services.webp");
+}
+
+.service3 .bg-img {
+  background-image: url("img/modern-living-room-services.webp");
+}
+
+.service1 .bg-text,
+.service2 .bg-text,
+.service3 .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #f7f7f7;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .services {
+    flex-direction: column;
+  }
+
+  .services a {
+    width: 100%; 
+  }
+
   .services .service1,
   .services .service2,
   .services .service3 {
-    position: relative;
-    width: 30%; 
-    height: 650px;
-    text-align: center;
-    border: 2px solid #c9c9c9;
-    border-radius: 10px;
+    width: auto; 
+    margin-bottom: 20px; 
   }
-  
-  .services .bg-img {
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-  }
-  
-  .service1 .bg-img {
-    background-image: url("img/modern-bathroom-services.webp");
-  }
-  
-  .service2 .bg-img {
-    background-image: url("img/modern-kitchen-services.webp");
-  }
-  
-  .service3 .bg-img {
-    background-image: url("img/modern-living-room-services.webp");
-  }
-  
-  .service1 .bg-text,
-  .service2 .bg-text,
-  .service3 .bg-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 30px;
-    border-radius: 10px;
-  }
-  
-  @media (max-width: 900px) {
-    .services {
-      flex-direction: column;
-    }
-  
-    .services .service1,
-    .services .service2,
-    .services .service3 {
-      width: 100%;
-    }
-  }
-  
-  /* Calculator */
-  
-  #calculator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-  }
-  
-  .calculator-container {
-    width: 700px;
-    height: 500px;
-    padding-top: 40px;
-    border: 2px solid #808080;
-    border-radius: 10px;
-    background-color: #fff;
-  }
-  
-  /* Contact */
-  
-  .contact-container {
-    max-width: 700px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 2px solid #686868;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-container h2 {
-    text-align: center;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    font-weight: bold;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    padding: 10px;
-    border: 1px solid #686868;
-    border-radius: 4px;
-    margin-top: 5px;
-  }
-  
-  .form-group textarea {
-    height: 150px;
-    overflow-y: auto;
-    resize: none;
-  }
-  
-  .form-group button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .form-group button:hover {
-    background-color: #0056b3;
-  }
-  
-  .form-group.required label:after {
-    content: "*";
-    color: red;
-    margin-left: 5px;
-  }
-  
-  /* Footer */
-  
-  footer {
-    background-color: #292929;
-  }
-  
-  footer .socials {
-    background-color: #404040; 
-    padding: 20px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .socials a {
-    margin-right: 20px;
-    font-size: 36px;
-    color: white;
-  }
-  
-  footer .copyright {
-    color: white;
-    height: 40px;
-  }
-  
-  footer .copyright p{
-    font-size: 20px;
-    text-align: center;
-    padding-top: 10px;
-  }
-  
+}
+
+/* Calculator */
+
+#calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.calc-container {
+  min-width: 800px;
+  padding: 20px;
+  background-color: #e4e4e4;
+  color: #66637A;
+  border-radius: 8px;
+}
+
+.calc-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calc-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-container label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #66637A;
+}
+
+.calc-container input[type="number"],
+.calc-container input[type="radio"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.calc-container button {
+  padding: 10px;
+  background-color: #169CEE;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+}
+
+.calc-container button:hover {
+  background-color: #1591df;
+}
+
+/* Contact */
+
+.contact-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #e4e4e4;
+  color: #66637A;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container h2 {
+  text-align: center;
+}
+
+.contact-container .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contact-container .form-group label {
+  font-weight: 700;
+}
+
+.contact-container .form-group input,
+.contact-container .form-group textarea {
+  padding: 10px;
+  border: 1px solid #686868;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.contact-container .form-group textarea {
+  height: 150px;
+  overflow-y: auto;
+  resize: none;
+}
+
+.contact-container .form-group button {
+  padding: 10px;
+  background-color: #169CEE;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-container .form-group button:hover {
+  background-color: #1591df;
+}
+
+.contact-container .form-group.required label:after {
+  content: "*";
+  color: #169CEE;
+  margin-left: 5px;
+}
+
+/* Footer */
+
+footer {
+  background-color: #e4e4e4;
+}
+
+footer .socials {
+  padding: 30px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.socials a {
+  margin-right: 20px;
+  font-size: 36px;
+  color: #169CEE;
+}
+
+footer .copyright {
+  color: #169CEE;
+  height: 40px;
+}
+
+footer .copyright p {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+}
