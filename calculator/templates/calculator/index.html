@@ -108,7 +108,7 @@
             </div>
             {% endfor %}
           </div>
-          <div class="remontointi-form">
+          <div class="remontointi-form" id="results">
             <label for="square_meters">Remontoitavan tilan lattiapinta-ala (m²) :</label>
             <input type="number" name="square_meters" placeholder="Square Meters">
           </div>
@@ -168,8 +168,10 @@
               <label for="item_{{ item.id }}">{{ item.type_of_item }}</label>
             </div>
             {% endfor %}
-          </div>
-          <button type="submit">Laske hinta</button>
+            <button type="submit">Laske hinta</button>
+            {% if total_cost %}
+            Total Cost: <span id='total-cost'> {{ total_cost }} </span>
+            {% endif %}
         </form>
       </div>
     </section>
