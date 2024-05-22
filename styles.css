@@ -16,7 +16,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f7f7f7;
-  color: #169CEE;
+  color: #164fee;
 }
 
 .navbar.sticky {
@@ -42,6 +42,7 @@ body {
 
 .navbar-links li a {
   text-decoration: none;
+  color: inherit;
   font-weight: 500;
   padding: 15px;
   display: block;
@@ -66,7 +67,7 @@ body {
 .toggle-button .bar {
   height: 3px;
   width: 100%;
-  background-color: #169CEE;
+  background-color: #164fee;
   border-radius: 10px;
 }
 
@@ -130,7 +131,7 @@ body {
   margin-top: 10px;
   border: 2px solid #f7f7f7;
   color: #f7f7f7;
-  background-color: #169CEE;
+  background-color: #164fee;
   padding: 10px;
   border-radius: 10px;
   font-size: 12px;
@@ -152,7 +153,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  color: #169CEE;
+  color: #164fee;
 }
 
 .about-container p {
@@ -220,6 +221,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 30px;
   border-radius: 10px;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
@@ -301,7 +303,7 @@ body {
 
 .form-group button {
   padding: 10px;
-  background-color: #169CEE;
+  background-color: #164fee;
   color: #fff;
   font-weight: 700;
   border: none;
@@ -315,7 +317,7 @@ body {
 
 .form-group.required label:after {
   content: "*";
-  color: #169CEE;
+  color: #164fee;
   margin-left: 5px;
 }
 
@@ -337,11 +339,11 @@ footer .socials {
 .socials a {
   margin-right: 20px;
   font-size: 36px;
-  color: #169CEE;
+  color: #164fee;
 }
 
 footer .copyright {
-  color: #169CEE;
+  color: #164fee;
   height: 40px;
 }
 
