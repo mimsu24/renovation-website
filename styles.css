@@ -243,20 +243,59 @@ body {
 
 /* Calculator */
 
+
 #calculator {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  padding: 50px 0;
 }
 
-.calculator-container {
-  width: 700px;
-  height: 500px;
-  padding-top: 40px;
-  border: 2px solid #808080;
-  border-radius: 10px;
-  background-color: #fff;
+.calc-container {
+  width: 800px;
+  padding: 20px;
+  background-color: #e4e4e4;
+  color: #66637A;
+  border-radius: 8px;
+}
+
+.calc-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calc-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-container label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #66637A;
+}
+
+.calc-container input[type="number"],
+.calc-container input[type="radio"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.calc-container button {
+  padding: 10px;
+  background-color: #164fee;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.calc-container button:hover {
+  background-color: #1591df;
 }
 
 /* Contact */

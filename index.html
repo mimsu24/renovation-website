@@ -95,7 +95,101 @@
 
 
     <section id="calculator">
-      <div class="calculator-container"></div>
+      <div class="calc-container">
+        <h1>Bathroom Repair</h1>
+        <form method="post">
+          <input type="hidden" name="calculator_type" value="bathroom">
+          <h3>Huoneiston tyyppi:</h3>
+          <div class='radio-container'>
+            <div>
+              <input type="radio" name="house_type" value="house1" id="house_type">
+              <label for="house_type">House1</label>
+              <input type="radio" name="house_type" value="house2" id="house_type">
+              <label for="house_type">House2</label>
+              <input type="radio" name="house_type" value="house3" id="house_type">
+              <label for="house_type">House3</label>
+            </div>
+          </div>
+
+          <div class="remontointi-form" id="results">
+            <label for="square_meters">Remontoitavan tilan lattiapinta-ala (m²) :</label>
+            <input type="number" name="square_meters" placeholder="Square Meters">
+          </div>
+
+          <h3>Seinien maalaus</h3>
+          <div class='radio-container'>
+            <div>
+              <input type="radio" name="wall_material" value="wall_material1" id="wall_material">
+              <label for="wall_material">Material1</label>
+              <input type="radio" name="wall_material" value="wall_material2" id="wall_material">
+              <label for="wall_material">Material2</label>
+              <input type="radio" name="wall_material" value="wall_material3" id="wall_material">
+              <label for="wall_material">Material3</label>
+            </div>
+          </div>
+
+          <h3>Lattiamateriaali</h3>
+          <div class='radio-container'>
+            <div>
+              <input type="radio" name="floor_material" value="floor_material1" id="floor_material">
+              <label for="floor_material">Material1</label>
+              <input type="radio" name="floor_material" value="floor_material2" id="floor_material">
+              <label for="floor_material">Material2</label>
+              <input type="radio" name="floor_material" value="floor_material3" id="floor_material">
+              <label for="floor_material">Material3</label>
+            </div>
+          </div>
+
+          <h3>WC</h3>
+          <div class='radio-container'>
+            <div>
+              <input type="radio" name="toilet" value="toilet1" id="toilet">
+              <label for="toilet">Toilet1</label>
+              <input type="radio" name="toilet" value="toilet2" id="toilet">
+              <label for="toilet">Toilet2</label>
+              <input type="radio" name="toilet" value="toilet3" id="toilet">
+              <label for="toilet">Toilet3</label>
+            </div>
+          </div>
+
+          <h3>Suihkut</h3>
+          <div class='radio-container'>
+            <div>
+              <input type="radio" name="suihku" value="suihku1" id="suihku">
+              <label for="suihku">Suihku1</label>
+              <input type="radio" name="suihku" value="suihku2" id="suihku">
+              <label for="suihku">Suihku2</label>
+              <input type="radio" name="suihku" value="suihku3" id="suihku">
+              <label for="suihku">Suihku3</label>
+            </div>
+          </div>
+
+          <h3>Allashanat</h3>
+          <div class='radio-container'>
+            <div>
+              <input type="radio" name="hana" value="hana1" id="hana">
+              <label for="hana">hana1</label>
+              <input type="radio" name="hana" value="hana2" id="hana">
+              <label for="hana">hana2</label>
+              <input type="radio" name="hana" value="hana3" id="hana">
+              <label for="hana">hana3</label>
+            </div>
+          </div>
+
+          <h3>Erikoiskohteet</h3>
+          <div class='radio-container'>
+            <div>
+              <input type="radio" name="ekohde" value="ekohde1" id="ekohde">
+              <label for="ekohde">ekohde1</label>
+              <input type="radio" name="ekohde" value="ekohde2" id="ekohde">
+              <label for="ekohde">ekohde2</label>
+              <input type="radio" name="ekohde" value="ekohde3" id="ekohde">
+              <label for="ekohde">ekohde3</label>
+            </div>
+            <button type="submit">Laske hinta</button>
+            Total Cost:
+        </form>
+      </div>
     </section>
 
     <section id="contact">
