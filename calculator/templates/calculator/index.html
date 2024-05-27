@@ -108,16 +108,13 @@
             </div>
             {% endfor %}
           </div>
-          <div class="remontointi-form" id="results">
-            <label for="square_meters">Remontoitavan tilan lattiapinta-ala (m²) :</label>
-            <input type="number" name="square_meters" placeholder="Square Meters">
-          </div>
           <h3>Seinien maalaus</h3>
           <div class='radio-container'>
             {% for material in wall_material %}
             <div>
-              <input type="radio" name="wall_material" value="{{ material.id }}" id="material_{{ material.id }}">
-              <label for="material_{{ material.id }}">{{ material.wall_material }}</label>
+                <input type="checkbox" name="wall_material_id[]" value="{{ material.id }}" id="material_{{ material.id }}">
+                <label for="wall_material_{{ material.id }}">{{ material.wall_material }}</label>
+                <input type="number" name="wall_square_meters[]" placeholder="m²" style="width: 80px;">
             </div>
             {% endfor %}
           </div>
@@ -125,8 +122,9 @@
           <div class='radio-container'>
             {% for material in floor_material %}
             <div>
-              <input type="radio" name="floor_material" value="{{ material.id }}" id="material_{{ material.id }}">
-              <label for="material_{{ material.id }}">{{ material.floor_material }}</label>
+                <input type="checkbox" name="floor_material_id[]" value="{{ material.id }}" id="material_{{ material.id }}">
+                <label for="floor_material_{{ material.id }}">{{ material.floor_material }}</label>
+                <input type="number" name="floor_square_meters[]" placeholder="m²" style="width: 80px;">
             </div>
             {% endfor %}
           </div>
@@ -169,8 +167,109 @@
             </div>
             {% endfor %}
             <button type="submit">Laske hinta</button>
+            {% if floor_results %}
+              <h3>Floor Material Results</h3>
+              <div class="results-container">
+                  {% for result in floor_results %}
+                      <div class="result">
+                          <p>Material: {{ result.material }}</p>
+                          <p>Square Meters: {{ result.square_meters }}</p>
+                          <p>Cost: {{ result.cost | floatformat:2 }} €</p>
+                          <br>
+                      </div>
+                  {% endfor %}
+              </div>
+            {% endif %}
+        
+            {% if wall_results %}
+                <h3>Wall Material Results</h3>
+                <div class="results-container">
+                    {% for result in wall_results %}
+                        <div class="result">
+                            <p>Material: {{ result.material }}</p>
+                            <p>Square Meters: {{ result.square_meters }}</p>
+                            <p>Cost: {{ result.cost | floatformat:2 }} €</p>
+                            <br>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if house_result %}
+              <h3>House Type Results</h3>
+              <div class="result-container">
+                {% for house in house_result %}
+                  <div class="result">
+                    <p>Type: {{ house.type }}</p>
+                    <p>Cost: {{ house.additional_cost }}€</p>
+                    <br>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if toilet_result %}
+              <h3>WC Type Results</h3>
+              <div class="result-container">
+                {% for toilet in toilet_result %}
+                  <div class="result">
+                    <p>Type: {{ toilet.type }}</p>
+                    <p>Cost: {{ toilet.additional_cost }}€</p>
+                    <br>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if shower_result %}
+              <h3>Shower Type Results</h3>
+              <div class="result-container">
+                {% for shower in shower_result %}
+                  <div class="result">
+                    <p>Type: {{ shower.type }}</p>
+                    <p>Cost: {{ shower.additional_cost }}€</p>
+                    <br>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if sink_result %}
+              <h3>Sink Type Results</h3>
+              <div class="result-container">
+                {% for sink in sink_result %}
+                  <div class="result">
+                    <p>Type: {{ sink.type }}</p>
+                    <p>Cost: {{ sink.additional_cost }}€</p>
+                    <br>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if item_result %}
+              <h3>Special Item Type Results</h3>
+              <div class="result-container">
+                {% for item in item_result %}
+                  <div class="result">
+                    <p>Type: {{ item.type }}</p>
+                    <p>Cost: {{ item.additional_cost }}€</p>
+                    <br>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+        
             {% if total_cost %}
-            Total Cost: <span id='total-cost'> {{ total_cost }} </span>
+                <p>Total Cost: {{ total_cost }} €</p>
+            {% endif %}
+
+            {% if total_floor_cost %}
+                <p>Total Floor Cost: {{ total_floor_cost }} €</p>
+            {% endif %}
+
+            {% if total_wall_cost %}
+                <p>Total Wall Cost: {{ total_wall_cost }} €</p>
             {% endif %}
         </form>
       </div>
