@@ -261,7 +261,18 @@ body {
 
 .calc-container h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.calc-container h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.calc-container p {
+  margin-bottom: 5px;
+  box-sizing: border-box;
 }
 
 .calc-container form {
@@ -283,6 +294,10 @@ body {
   margin-bottom: 10px;
 }
 
+.calc-container input[type="radio"] {
+  accent-color: #164fee;
+}
+
 .calc-container button {
   padding: 10px;
   background-color: #164fee;
@@ -294,9 +309,7 @@ body {
   width: 100px;
 }
 
-.calc-container button:hover {
-  background-color: #1591df;
-}
+.radio-container input[type=)] .radio
 
 /* Contact */
 
@@ -311,8 +324,9 @@ body {
   flex-direction: column;
 }
 
-.contact-container h2 {
+.contact-container h1 {
   text-align: center;
+
 }
 
 .form-group {
