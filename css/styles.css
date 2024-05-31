@@ -323,6 +323,8 @@ html {
   margin-bottom: 20px;
 }
 
+/* contact */
+
 .contact-container {
   width: 50%;
   min-height: 600px;
@@ -333,8 +335,6 @@ html {
   display: flex;
   flex-direction: column;
 }
-
-/* contact */
 
 .contact-container h1 {
   text-align: center;
