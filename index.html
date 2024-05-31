@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <script src="navigation.js" defer></script>
+  <script src="js/main.js" defer></script>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Elevate your space with expert renovation services from Company Name. We offer craftsmanship and creativity to turn your dream space into reality. Calculate your estimate and contact us today for a quote!">
@@ -27,9 +27,9 @@
       </a>
       <div class="navbar-links">
         <ul>
-          <li><a href="#about" onclick="scrollToAbout()">About</a></li>
-          <li><a href="#services" onclick="scrollToServices()">Services</a></li>
-          <li><a href="#contact" onclick="scrollToContact()">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -40,7 +40,7 @@
       <h1>Elevate Your Space with Expert Renovation Services</h1>
       <p>Craftsmanship. Creativity. Your Dream Space, Realized.</p>
       <button class="cta" onclick="scrollToCalculator()">
-        Calculate price
+        Contact us!
       </button>
     </section>
 
@@ -93,131 +93,132 @@
       </a>
     </section>
 
-
-    <section id="calculator">
-      <div class="calc-container">
-        <h1>Bathroom Repair</h1>
-        <form method="post">
-          <input type="hidden" name="calculator_type" value="bathroom">
-          <h2>House type:</h2>
-          <div class='radio-container'>
-            <div>
-              <input type="radio" name="house_type" value="house1" id="house_type">
-              <label for="house_type">House1</label>
-              <input type="radio" name="house_type" value="house2" id="house_type">
-              <label for="house_type">House2</label>
-              <input type="radio" name="house_type" value="house3" id="house_type">
-              <label for="house_type">House3</label>
-            </div>
-          </div>
-
-          <div class="remontointi-form" id="results">
-            <label for="square_meters">The area of the floor to be renovated (m²) :</label>
-            <input type="number" name="square_meters" placeholder="Square Meters">
-          </div>
-
-          <h2>Wall material</h2>
-          <div class='radio-container'>
-            <div>
-              <input type="radio" name="wall_material" value="wall_material1" id="wall_material">
-              <label for="wall_material">Material1</label>
-              <input type="radio" name="wall_material" value="wall_material2" id="wall_material">
-              <label for="wall_material">Material2</label>
-              <input type="radio" name="wall_material" value="wall_material3" id="wall_material">
-              <label for="wall_material">Material3</label>
-            </div>
-          </div>
-
-          <h2>Floor material</h2>
-          <div class='radio-container'>
-            <div>
-              <input type="radio" name="floor_material" value="floor_material1" id="floor_material">
-              <label for="floor_material">Material1</label>
-              <input type="radio" name="floor_material" value="floor_material2" id="floor_material">
-              <label for="floor_material">Material2</label>
-              <input type="radio" name="floor_material" value="floor_material3" id="floor_material">
-              <label for="floor_material">Material3</label>
-            </div>
-          </div>
-
-          <h2>Toilet</h2>
-          <div class='radio-container'>
-            <div>
-              <input type="radio" name="toilet" value="toilet1" id="toilet">
-              <label for="toilet">Toilet1</label>
-              <input type="radio" name="toilet" value="toilet2" id="toilet">
-              <label for="toilet">Toilet2</label>
-              <input type="radio" name="toilet" value="toilet3" id="toilet">
-              <label for="toilet">Toilet3</label>
-            </div>
-          </div>
-
-          <h2>Shower</h2>
-          <div class='radio-container'>
-            <div>
-              <input type="radio" name="suihku" value="suihku1" id="suihku">
-              <label for="suihku">Suihku1</label>
-              <input type="radio" name="suihku" value="suihku2" id="suihku">
-              <label for="suihku">Suihku2</label>
-              <input type="radio" name="suihku" value="suihku3" id="suihku">
-              <label for="suihku">Suihku3</label>
-            </div>
-          </div>
-
-          <h2>Sink</h2>
-          <div class='radio-container'>
-            <div>
-              <input type="radio" name="hana" value="hana1" id="hana">
-              <label for="hana">hana1</label>
-              <input type="radio" name="hana" value="hana2" id="hana">
-              <label for="hana">hana2</label>
-              <input type="radio" name="hana" value="hana3" id="hana">
-              <label for="hana">hana3</label>
-            </div>
-          </div>
-
-          <h2>Erikoiskohteet</h2>
-          <div class='radio-container'>
-            <div>
-              <input type="radio" name="ekohde" value="ekohde1" id="ekohde">
-              <label for="ekohde">ekohde1</label>
-              <input type="radio" name="ekohde" value="ekohde2" id="ekohde">
-              <label for="ekohde">ekohde2</label>
-              <input type="radio" name="ekohde" value="ekohde3" id="ekohde">
-              <label for="ekohde">ekohde3</label>
-            </div>
-            <button type="submit">Laske hinta</button>
-            Total Cost:
-        </form>
+    <section class="main-container">
+      <div id="calculator" class="calc-container">
+          <h1>Bathroom Repair</h1>
+          <form method="post">
+              <input type="hidden" name="calculator_type" value="bathroom">
+              <h2>House type:</h2>
+              <div class='radio-container'>
+                  <div>
+                      <input type="radio" name="house_type" value="house1" id="house_type">
+                      <label for="house_type">House1</label>
+                      <input type="radio" name="house_type" value="house2" id="house_type">
+                      <label for="house_type">House2</label>
+                      <input type="radio" name="house_type" value="house3" id="house_type">
+                      <label for="house_type">House3</label>
+                  </div>
+              </div>
+  
+              <div class="remontointi-form" id="results">
+                  <label for="square_meters">The area of the floor to be renovated (m²) :</label>
+                  <input type="number" name="square_meters" placeholder="Square Meters">
+              </div>
+  
+              <h2>Wall material</h2>
+              <div class='radio-container'>
+                  <div>
+                      <input type="radio" name="wall_material" value="wall_material1" id="wall_material">
+                      <label for="wall_material">Material1</label>
+                      <input type="radio" name="wall_material" value="wall_material2" id="wall_material">
+                      <label for="wall_material">Material2</label>
+                      <input type="radio" name="wall_material" value="wall_material3" id="wall_material">
+                      <label for="wall_material">Material3</label>
+                  </div>
+              </div>
+  
+              <h2>Floor material</h2>
+              <div class='radio-container'>
+                  <div>
+                      <input type="radio" name="floor_material" value="floor_material1" id="floor_material">
+                      <label for="floor_material">Material1</label>
+                      <input type="radio" name="floor_material" value="floor_material2" id="floor_material">
+                      <label for="floor_material">Material2</label>
+                      <input type="radio" name="floor_material" value="floor_material3" id="floor_material">
+                      <label for="floor_material">Material3</label>
+                  </div>
+              </div>
+  
+              <h2>Toilet</h2>
+              <div class='radio-container'>
+                  <div>
+                      <input type="radio" name="toilet" value="toilet1" id="toilet">
+                      <label for="toilet">Toilet1</label>
+                      <input type="radio" name="toilet" value="toilet2" id="toilet">
+                      <label for="toilet">Toilet2</label>
+                      <input type="radio" name="toilet" value="toilet3" id="toilet">
+                      <label for="toilet">Toilet3</label>
+                  </div>
+              </div>
+  
+              <h2>Shower</h2>
+              <div class='radio-container'>
+                  <div>
+                      <input type="radio" name="suihku" value="suihku1" id="suihku">
+                      <label for="suihku">Suihku1</label>
+                      <input type="radio" name="suihku" value="suihku2" id="suihku">
+                      <label for="suihku">Suihku2</label>
+                      <input type="radio" name="suihku" value="suihku3" id="suihku">
+                      <label for="suihku">Suihku3</label>
+                  </div>
+              </div>
+  
+              <h2>Sink</h2>
+              <div class='radio-container'>
+                  <div>
+                      <input type="radio" name="hana" value="hana1" id="hana">
+                      <label for="hana">hana1</label>
+                      <input type="radio" name="hana" value="hana2" id="hana">
+                      <label for="hana">hana2</label>
+                      <input type="radio" name="hana" value="hana3" id="hana">
+                      <label for="hana">hana3</label>
+                  </div>
+              </div>
+  
+              <h2>Erikoiskohteet</h2>
+              <div class='radio-container'>
+                  <div>
+                      <input type="radio" name="ekohde" value="ekohde1" id="ekohde">
+                      <label for="ekohde">ekohde1</label>
+                      <input type="radio" name="ekohde" value="ekohde2" id="ekohde">
+                      <label for="ekohde">ekohde2</label>
+                      <input type="radio" name="ekohde" value="ekohde3" id="ekohde">
+                      <label for="ekohde">ekohde3</label>
+                  </div>
+              </div>
+              <div class="calculate">
+              Kokonaishinta:
+              <button type="submit">Laske</button>
+              </div>
+          </form>
       </div>
-    </section>
-
-    <section id="contact">
-      <div class="contact-container">
-        <h1>Contact Us</h1>
-        <form action="#" method="post">
-          <div class="form-group required">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group required">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="form-group required">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <div class="form-group">
-            <button type="submit">Submit</button>
-          </div>
-        </form>
+  
+      <div id="contact" class="contact-container">
+          <h1>Contact Us</h1>
+          <form action="#" method="post">
+              <div class="form-group required">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group required">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" />
+              </div>
+              <div class="form-group required">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required></textarea>
+              </div>
+              <div class="form-group">
+                  <button type="submit">Lähetä</button>
+              </div>
+          </form>
       </div>
-    </section>
+  </section>
+  
   </main>
 
   <footer>

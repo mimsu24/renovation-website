@@ -9,6 +9,10 @@ body {
   background-color: #f7f7f7;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Header */
 
 .navbar {
@@ -105,7 +109,7 @@ body {
 
 .hero-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("img/modern-kitchen-hero.webp");
+    url("../img/modern-kitchen-hero.webp");
   /* Change the decimal values to affect transparency */
   background-position: center;
   background-size: cover;
@@ -164,16 +168,16 @@ body {
 }
 
 /* Services */
-
 .services {
   display: flex;
-  justify-content: space-around;
-  margin: 10px;
+  justify-content: space-between;
+  margin: 40px 40px;
+  gap: 60px;
 }
 
 .services a {
   text-decoration: none;
-  width: 30%;
+  width: 35%;
 }
 
 .services .service1,
@@ -198,15 +202,15 @@ body {
 }
 
 .service1 .bg-img {
-  background-image: url("img/modern-bathroom-services.webp");
+  background-image: url("../img/modern-bathroom-services.webp");
 }
 
 .service2 .bg-img {
-  background-image: url("img/modern-kitchen-services.webp");
+  background-image: url("../img/modern-kitchen-services.webp");
 }
 
 .service3 .bg-img {
-  background-image: url("img/modern-living-room-services.webp");
+  background-image: url("../img/modern-living-room-services.webp");
 }
 
 .service1 .bg-text,
@@ -241,43 +245,44 @@ body {
   }
 }
 
-/* Calculator */
+/* Calculator & Contact */
 
-
-#calculator {
+.main-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
+  justify-content: flex-start;
+  gap: 60px;
+  margin: 60px 40px;
 }
 
 .calc-container {
-  width: 800px;
+  width: 50%;
+  min-height: 600px;
   padding: 20px;
   background-color: #e4e4e4;
   color: #66637A;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
 }
 
 .calc-container h1 {
   text-align: center;
   margin-bottom: 10px;
   font-size: 24px;
+  font-weight: 600;
 }
 
 .calc-container h2 {
   margin-bottom: 10px;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .calc-container p {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   box-sizing: border-box;
-}
-
-.calc-container form {
-  display: flex;
-  flex-direction: column;
+  font-weight: 600;
 }
 
 .calc-container label {
@@ -291,7 +296,7 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .calc-container input[type="radio"] {
@@ -300,22 +305,27 @@ body {
 
 .calc-container button {
   padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 0px;
   background-color: #164fee;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100px;
+  width: 20%;
 }
 
-.radio-container input[type=)] .radio
-
-/* Contact */
+.calculate {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 
 .contact-container {
-  max-width: 700px;
-  margin: 50px auto;
+  width: 50%;
+  min-height: 600px;
   padding: 20px;
   background-color: #e4e4e4;
   color: #66637A;
@@ -323,6 +333,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* contact */
 
 .contact-container h1 {
   text-align: center;
@@ -349,12 +361,13 @@ body {
 }
 
 .form-group textarea {
-  height: 150px;
+  height: 250px;
   overflow-y: auto;
   resize: none;
 }
 
 .form-group button {
+  width: 20%;
   padding: 10px;
   background-color: #164fee;
   color: #fff;
@@ -374,6 +387,16 @@ body {
   margin-left: 5px;
 }
 
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .calc-container,
+  .contact-container {
+    width: 100%;
+  }
+}
 /* Footer */
 
 footer {
