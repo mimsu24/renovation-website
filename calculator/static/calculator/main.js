@@ -1,21 +1,3 @@
-// Smooth scrolling on navigation links
-function scrollToCalculator() {
-    document.querySelector('#calculator').scrollIntoView({ behavior: 'smooth' });
-}
-
-function scrollToAbout() {
-    document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
-}
-
-function scrollToServices() {
-    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
-}
-
-function scrollToContact() {
-    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-}
-
-
 // Toggle for the navbar menu
 const toggleButton = document.querySelector('.toggle-button');
 const navbarLinks = document.querySelector('.navbar-links');

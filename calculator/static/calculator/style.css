@@ -9,14 +9,18 @@ body {
   background-color: #f7f7f7;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Header */
 
-.navbar {
+.navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #f7f7f7;
-  color: #169CEE;
+  color: #164fee;
 }
 
 .navbar.sticky {
@@ -42,7 +46,9 @@ body {
 
 .navbar-links li a {
   text-decoration: none;
-  font-weight: 500;
+  color: inherit;
+  font-weight: 600;
+  font-size: 18px;
   padding: 15px;
   display: block;
 }
@@ -66,7 +72,7 @@ body {
 .toggle-button .bar {
   height: 3px;
   width: 100%;
-  background-color: #169CEE;
+  background-color: #164fee;
   border-radius: 10px;
 }
 
@@ -104,14 +110,16 @@ body {
 
 .hero-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("img/modern-kitchen-hero.webp");
+    url("../img/modern-kitchen-hero.webp");
   /* Change the decimal values to affect transparency */
   background-position: center;
   background-size: cover;
   height: 800px;
-  padding-top: 300px;
   text-align: center;
   color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-container h1 {
@@ -127,14 +135,17 @@ body {
 }
 
 .hero-container .cta {
+  width: 100px;
   margin-top: 10px;
   border: 2px solid #f7f7f7;
   color: #f7f7f7;
-  background-color: #169CEE;
+  background-color: #164fee;
   padding: 10px;
   border-radius: 10px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
+  align-self: center;
+  text-decoration: none;
 }
 
 .hero-container .cta:hover {
@@ -152,33 +163,42 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  color: #169CEE;
+  color: #164fee;
+}
+
+.about-container h1 {
+  margin-top: 20px;
+  max-width: 400px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .about-container p {
   margin-top: 20px;
   max-width: 400px;
+  font-size: 18px;
   font-weight: 600;
   color: #66637A;
 }
 
 /* Services */
-
 .services {
   display: flex;
-  justify-content: space-around;
-  margin: 10px;
+  justify-content: space-between;
+  margin: 40px 40px;
+  gap: 60px;
 }
 
 .services a {
   text-decoration: none;
-  width: 30%;
+  width: 35%;
 }
 
 .services .service1,
 .services .service2,
 .services .service3 {
   position: relative;
+  flex-wrap: wrap;
   height: 650px;
   text-align: center;
   border: 2px solid #66637A;
@@ -197,15 +217,15 @@ body {
 }
 
 .service1 .bg-img {
-  background-image: url("img/modern-bathroom-services.webp");
+  background-image: url("../img/modern-bathroom-services.webp");
 }
 
 .service2 .bg-img {
-  background-image: url("img/modern-kitchen-services.webp");
+  background-image: url("../img/modern-kitchen-services.webp");
 }
 
 .service3 .bg-img {
-  background-image: url("img/modern-living-room-services.webp");
+  background-image: url("../img/modern-living-room-services.webp");
 }
 
 .service1 .bg-text,
@@ -220,6 +240,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 30px;
   border-radius: 10px;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
@@ -239,36 +260,49 @@ body {
   }
 }
 
-/* Calculator */
+/* Calculator & Contact */
 
-#calculator {
+.main-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
+  justify-content: flex-start;
+  gap: 60px;
+  margin: 60px 40px;
 }
 
 .calc-container {
-  width: 800px;
+  width: 50%;
   padding: 20px;
   background-color: #e4e4e4;
-  color: #66637A;
+  color: #2b2a2a;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-weight: 600;
 }
 
 .calc-container h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-.calc-container form {
-  display: flex;
-  flex-direction: column;
+.calc-container h3 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 15px;
+  margin-bottom: 15px;
+}
+
+.calc-container p {
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-weight: 600;
 }
 
 .calc-container label {
   font-weight: 600;
-  margin-bottom: 10px;
   color: #66637A;
 }
 
@@ -277,29 +311,50 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.calc-container input[type="radio"],
+.calc-container input[type="checkbox"] {
+  accent-color: #164fee;
 }
 
 .calc-container button {
   padding: 10px;
-  background-color: #169CEE;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  background-color: #164fee;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100px;
+  width: 20%;
+  scroll-behavior: auto;
 }
 
 .calc-container button:hover {
   background-color: #1591df;
 }
 
-/* Contact */
+.calc-container .radio-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+.calculate {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* contact */
 
 .contact-container {
-  max-width: 700px;
-  margin: 50px auto;
+  width: 50%;
+  max-height: 660px;
   padding: 20px;
   background-color: #e4e4e4;
   color: #66637A;
@@ -308,22 +363,24 @@ body {
   flex-direction: column;
 }
 
-.contact-container h2 {
+.contact-container h1 {
   text-align: center;
+  color: #2b2a2a;
 }
 
-.contact-container .form-group {
+.form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
 
-.contact-container .form-group label {
+.form-group label {
   font-weight: 700;
+  color: #2b2a2a;
 }
 
-.contact-container .form-group input,
-.contact-container .form-group textarea {
+.form-group input,
+.form-group textarea {
   padding: 10px;
   border: 1px solid #686868;
   background-color: #f7f7f7;
@@ -331,32 +388,43 @@ body {
   margin-top: 5px;
 }
 
-.contact-container .form-group textarea {
-  height: 150px;
+.form-group textarea {
+  height: 250px;
   overflow-y: auto;
   resize: none;
 }
 
-.contact-container .form-group button {
+.form-group button {
+  width: 20%;
   padding: 10px;
-  background-color: #169CEE;
-  color: #ffffff;
-  font-weight: 600;
+  background-color: #164fee;
+  color: #fff;
+  font-weight: 700;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.contact-container .form-group button:hover {
+.form-group button:hover {
   background-color: #1591df;
 }
 
-.contact-container .form-group.required label:after {
+.form-group.required label:after {
   content: "*";
-  color: #169CEE;
+  color: #164fee;
   margin-left: 5px;
 }
 
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .calc-container,
+  .contact-container {
+    width: 100%;
+  }
+}
 /* Footer */
 
 footer {
@@ -375,11 +443,11 @@ footer .socials {
 .socials a {
   margin-right: 20px;
   font-size: 36px;
-  color: #169CEE;
+  color: #164fee;
 }
 
 footer .copyright {
-  color: #169CEE;
+  color: #164fee;
   height: 40px;
 }
 
