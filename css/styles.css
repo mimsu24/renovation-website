@@ -47,7 +47,8 @@ html {
 .navbar-links li a {
   text-decoration: none;
   color: inherit;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 18px;
   padding: 15px;
   display: block;
 }
@@ -114,9 +115,11 @@ html {
   background-position: center;
   background-size: cover;
   height: 800px;
-  padding-top: 300px;
   text-align: center;
   color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-container h1 {
@@ -132,14 +135,17 @@ html {
 }
 
 .hero-container .cta {
+  width: 100px;
   margin-top: 10px;
   border: 2px solid #f7f7f7;
   color: #f7f7f7;
   background-color: #164fee;
   padding: 10px;
   border-radius: 10px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
+  align-self: center;
+  text-decoration: none;
 }
 
 .hero-container .cta:hover {
@@ -160,9 +166,17 @@ html {
   color: #164fee;
 }
 
+.about-container h1 {
+  margin-top: 20px;
+  max-width: 400px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .about-container p {
   margin-top: 20px;
   max-width: 400px;
+  font-size: 18px;
   font-weight: 600;
   color: #66637A;
 }
@@ -184,6 +198,7 @@ html {
 .services .service2,
 .services .service3 {
   position: relative;
+  flex-wrap: wrap;
   height: 650px;
   text-align: center;
   border: 2px solid #66637A;
@@ -259,7 +274,7 @@ html {
   min-height: 600px;
   padding: 20px;
   background-color: #e4e4e4;
-  color: #66637A;
+  color: #2b2a2a;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -316,6 +331,11 @@ html {
   width: 20%;
 }
 
+.calc-container button:hover {
+  background-color: #1591df;
+}
+
+
 .calculate {
   display: flex;
   flex-direction: column;
@@ -338,7 +358,7 @@ html {
 
 .contact-container h1 {
   text-align: center;
-
+  color: #2b2a2a;
 }
 
 .form-group {
@@ -349,6 +369,7 @@ html {
 
 .form-group label {
   font-weight: 700;
+  color: #2b2a2a;
 }
 
 .form-group input,
