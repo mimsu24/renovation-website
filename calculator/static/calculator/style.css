@@ -183,7 +183,6 @@ html {
 /* Services section */
 .services {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   margin: 40px 40px;
   gap: 60px;
@@ -198,7 +197,6 @@ html {
 .services .service2,
 .services .service3 {
   position: relative;
-  flex-wrap: wrap;
   height: 650px;
   text-align: center;
   border: 2px solid #66637A;
