@@ -9,12 +9,12 @@ body {
   background-color: #f7f7f7;
 }
 
+/* By default make all links within the page scroll smoothly to destination */
 html {
   scroll-behavior: smooth;
 }
 
-/* Header */
-
+/* Header section */
 .navbar{
   display: flex;
   justify-content: space-between;
@@ -23,6 +23,7 @@ html {
   color: #164fee;
 }
 
+/* Sticky class for navbar to make it fixed at the top of the screen */
 .navbar.sticky {
   position: fixed;
   width: 100%;
@@ -106,8 +107,7 @@ html {
   }
 }
 
-/* Hero */
-
+/* Hero section */
 .hero-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../img/modern-kitchen-hero.webp");
@@ -153,8 +153,7 @@ html {
   cursor: pointer;
 }
 
-/* About */
-
+/* About section */
 .about-container {
   height: 600px;
   text-align: center;
@@ -178,12 +177,13 @@ html {
   max-width: 400px;
   font-size: 18px;
   font-weight: 600;
-  color: #66637A;
+  color: #2b2a2a;
 }
 
-/* Services */
+/* Services section */
 .services {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 40px 40px;
   gap: 60px;
@@ -260,8 +260,7 @@ html {
   }
 }
 
-/* Calculator & Contact */
-
+/* Calculator & Contact section */
 .main-container {
   display: flex;
   justify-content: flex-start;
@@ -285,14 +284,14 @@ html {
   text-align: center;
   margin-bottom: 10px;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .calc-container h3 {
   font-size: 18px;
-  font-weight: 600;
-  padding-top: 15px;
-  margin-bottom: 15px;
+  font-weight: 700;
+  padding-top: 5px;
+  margin-bottom: 10px;
 }
 
 .calc-container p {
@@ -303,15 +302,15 @@ html {
 
 .calc-container label {
   font-weight: 600;
-  color: #66637A;
+  color: #2b2a2a;
 }
 
 .calc-container input[type="number"],
 .calc-container input[type="radio"] {
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .calc-container input[type="radio"],
@@ -322,7 +321,7 @@ html {
 .calc-container button {
   padding: 10px;
   margin-top: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   background-color: #164fee;
   color: #ffffff;
   font-weight: 700;
@@ -342,15 +341,6 @@ html {
   gap: 10px;
   flex-wrap: wrap;
 }
-
-
-.calculate {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-/* contact */
 
 .contact-container {
   width: 50%;
@@ -425,8 +415,8 @@ html {
     width: 100%;
   }
 }
-/* Footer */
 
+/* Footer */
 footer {
   background-color: #e4e4e4;
 }
